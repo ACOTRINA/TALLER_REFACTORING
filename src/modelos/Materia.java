@@ -1,6 +1,7 @@
 package modelos;
 
 public class Materia {
+
     private String codigo;
     private String nombre;
     private String facultad;
@@ -55,7 +56,5 @@ public class Materia {
     public void setNotaTotal(double notaTotal) {
         this.notaTotal = notaTotal;
     }
-    
-    
-    
+
 }
