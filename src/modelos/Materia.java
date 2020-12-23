@@ -7,7 +7,6 @@ public class Materia {
     private String facultad;
     private double notaInicial;
     private double notaFinal;
-    private double notaTotal;
 
     public String getCodigo() {
         return codigo;
@@ -29,9 +28,6 @@ public class Materia {
         return notaFinal;
     }
 
-    public double getNotaTotal() {
-        return notaTotal;
-    }
 
     public void setCodigo(String codigo) {
         this.codigo = codigo;
@@ -53,8 +49,31 @@ public class Materia {
         this.notaFinal = notaFinal;
     }
 
-    public void setNotaTotal(double notaTotal) {
-        this.notaTotal = notaTotal;
+
+    //Calcula y devuelve la nota inicial contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.
+    public double CalcularNotaInicial(Nota notas) {
+        return CalcularNota(notas);
+    }
+
+    //Calcula y devuelve la nota final contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.    
+    public double CalcularNotaFinal(Nota notas) {
+        return CalcularNota(notas);
+    }
+
+    public double CalcularNota(Nota notas) {
+        double nota = 0;
+        double notaTeorico = (notas.getNexamen() + notas.getNdeberes() + notas.getNlecciones()) * 0.80;
+        double notaPractico = (notas.getNtalleres()) * 0.20;
+        nota = notaTeorico + notaPractico;
+        return nota;
+    }
+
+    //Calcula y devuelve la nota inicial contando examen, deberes, lecciones y talleres. Esta nota es solo el promedio de las dos calificaciones anteriores.
+    public double CalcularNotaTotal() {
+        double notaTotal = 0;
+        notaTotal = (notaInicial + notaFinal) / 2;
+        return notaTotal;
+
     }
 
 }
