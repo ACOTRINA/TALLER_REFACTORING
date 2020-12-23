@@ -32,7 +32,5 @@ public class Paralelo {
         this.profesor = profesor;
     }
     
-    }
+ }
     
-    
-}
