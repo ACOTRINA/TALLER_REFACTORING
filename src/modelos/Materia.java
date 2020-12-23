@@ -1,12 +1,12 @@
 package modelos;
 
 public class Materia {
-    public String codigo;
-    public String nombre;
-    public String facultad;
-    public double notaInicial;
-    public double notaFinal;
-    public double notaTotal;
+    private String codigo;
+    private String nombre;
+    private String facultad;
+    private double notaInicial;
+    private double notaFinal;
+    private double notaTotal;
 
     public String getCodigo() {
         return codigo;
